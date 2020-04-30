@@ -1,0 +1,30 @@
+Aston Villa 0 #AVFC
+Arsenal 1 #AFC
+QPR 2 #QPR
+Chelsea 3 #CFC
+Manchester United 4 #MUFC
+Brighton 5 #BHAFC
+Swansea 6 #Swans
+Southampton 7 #SaintsFC
+Tottenham 8 #COYS
+Newcastle 9 #NUFC
+Hull City 10 #hcafc
+Manchester Utd 11 #MUFC
+Wolves 12 #wwfc
+Cardiff 13 #cardiffcity
+Stoke 14 #SCFC
+Leicester 15 #LCFC
+Manchester City 16 MCFC
+Liverpool 17 #LFC
+Sunderland 18 #SAFC
+Crystal Palace 19 #CPFC
+Everton 20 #EFC
+Fulham 21 #FFC
+Watford 22 #WatfordFC
+West Ham 23 #WHUFC
+Middlesbrough 24 #boro
+West Brom 25 #WBA
+Bournemouth 26 #AFCB
+Burnley 27 #Clarets
+Huddersfield 28 #HTAFC
+Norwich 29 #ncfc
