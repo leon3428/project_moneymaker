@@ -1,11 +1,5 @@
 import pandas as pd
 
-class Club:
-    def __init__(self, name, id, hashtag):
-        self.name = name
-        self.id = id
-        self.hashtag = hashtag
-
 df = pd.read_excel ('data.xlsx')
 df = df[(df.ID == 'ENG PL') & ((df.SEASON == '2018/2019') | (df.SEASON == '2017/2018') | (df.SEASON == '2016/2017') | (df.SEASON == '2015/2016') | (df.SEASON == '2014/2015') | (df.SEASON == '2013/2014'))]
 print (df.head())
