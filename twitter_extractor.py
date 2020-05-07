@@ -5,7 +5,7 @@ from datetime import date, timedelta
 import GetOldTweets3 as got
 from time import time
 
-MAX_TWEETS = 1000
+MAX_TWEETS = 100
 MPERSES = 50
 
 session_start = int(input('Session start: '))
