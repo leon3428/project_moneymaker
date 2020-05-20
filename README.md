@@ -39,7 +39,7 @@ _________________________________________________________________
 
 ### Rezultati
 
-Prosjećni postignuti profit na svim utakmicama je 4.5%. Ovaj rezultat je za ovako jednostavnu mrežu zadovoljavajuć i podudara se s očekivanjima.
+Prosječni postignuti profit na svim utakmicama je 4.5%. Ovaj rezultat je za ovako jednostavnu mrežu zadovoljavajuć i podudara se s očekivanjima.
 
 ### Pokretanje
 
