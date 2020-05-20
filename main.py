@@ -7,7 +7,8 @@ import numpy as np
 from tqdm import tqdm
 from keras.models import Model
 from keras.layers import Dense, Dropout, Input
-from keras.optimizers import Adam
+from keras.optimizers import Adam, RMSprop
+from keras.callbacks import ModelCheckpoint
 import keras.backend as K
 import matplotlib
 matplotlib.use('TkAgg')
@@ -19,15 +20,22 @@ y_data = np.load('y_data.npy')
 
 print(x_data.shape, y_data.shape)
 
+def unison_shuffled_copies(a, b):
+    assert len(a) == len(b)
+    p = np.random.permutation(len(a))
+    return a[p], b[p]
+
 def odds_loss(x_data):
 
 
     def loss(y_true, y_pred):
         if x_data == None:
             return K.zeros_like(y_true)
+
         odds_a = x_data[:, 0:1]
         odds_x = x_data[:, 1:2]
         odds_b = x_data[:, 2:3]
+        print(odds_a)
         win_home_team = y_true[:, 0:1]
         win_home_or_draw = y_true[:, 1:2]
         draw = y_true[:, 2:3]
@@ -59,13 +67,19 @@ def create_model():
     return model
 
 def main():
+    global x_data, y_data
+    x_data, y_data = unison_shuffled_copies(x_data, y_data)
+    print(x_data.shape, y_data.shape)
     model = create_model()
     print(model.summary())
+
+    filepath="model_saves/weights-improvement-{epoch:02d}-{val_loss:.2f}.hdf5"
+    checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=0, save_best_only=True, mode='min')
 
     optimizer = Adam(lr = 0.0005)
     model.compile(loss = odds_loss(model.layers[0].output), optimizer = optimizer)
 
-    val_history = model.fit(x_data, y_data, batch_size=16, epochs=100, validation_split=0.15 ,verbose=1)
+    val_history = model.fit(x_data, y_data, batch_size=16, epochs=70, validation_split=0.15 ,verbose=1, callbacks = [checkpoint])
 
     plt.subplot(1,2, 1)
     plt.grid(color='r',alpha = 0.2, linestyle='-', linewidth=1)
