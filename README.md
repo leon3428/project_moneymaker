@@ -11,19 +11,19 @@ Prosjećni profit na svim utakmicama je 4.5%. Ovaj rezultat je za ovako jednosta
 
 Struktura mreže:
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param #
 =================================================================
-input_1 (InputLayer)         (None, 19)                0         
+input_1 (InputLayer)         (None, 19)                0
 _________________________________________________________________
-dense_1 (Dense)              (None, 15)                300       
+dense_1 (Dense)              (None, 15)                300
 _________________________________________________________________
-dropout_1 (Dropout)          (None, 15)                0         
+dropout_1 (Dropout)          (None, 15)                0
 _________________________________________________________________
-dense_2 (Dense)              (None, 10)                160       
+dense_2 (Dense)              (None, 10)                160
 _________________________________________________________________
-dropout_2 (Dropout)          (None, 10)                0         
+dropout_2 (Dropout)          (None, 10)                0 
 _________________________________________________________________
-dense_3 (Dense)              (None, 6)                 66        
+dense_3 (Dense)              (None, 6)                 66
 =================================================================
 Total params: 526
 Trainable params: 526

@@ -66,7 +66,7 @@ def create_model():
 
     return model
 
-def main():
+def main_train():
     global x_data, y_data
     x_data, y_data = unison_shuffled_copies(x_data, y_data)
     print(x_data.shape, y_data.shape)
@@ -97,7 +97,22 @@ def main():
 
     plt.show()
 
+def main_val():
+    global x_data, y_data
+    x_data, y_data = unison_shuffled_copies(x_data, y_data)
+    print(x_data.shape, y_data.shape)
+    model = create_model()
+    print(model.summary())
+
+    model.load_weights('model_saves/0.18_save.hdf5')
+
+    optimizer = Adam(lr = 0.0005)
+    model.compile(loss = odds_loss(model.layers[0].output), optimizer = optimizer)
+
+    history = model.evaluate(x_data, y_data, verbose = 1)
+
+    print(history)
 
 
 if __name__ == "__main__":
-    main()
+    main_val()
